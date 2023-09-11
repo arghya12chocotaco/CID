@@ -1,0 +1,30 @@
+body{
+font-family:Times New Roman;
+color:black;
+background-image:url('https://www.nasa.gov/sites/default/files/thumbnails/image/1_icon_olympus_multi-purpose_isru-based_lunarconstructionsystem_concept-render_nov2022_for_icon_release.jpg');
+background-repeat:no-repeat;
+background-size:100% 100%;
+background-attachement:fixed;
+}
+p{
+margin-left:95px;
+margin-right:100px;
+text-align: center;
+border-style:line;
+border-width:15px:
+width:800;
+font-size:23px;
+}
+h1{
+font-size:70px;
+text-align: center;
+color:white;
+border-style:groove;
+border-color:lightblue;
+border-width:10px;
+width:1502;
+}
+div{
+  background-color:black;
+}
+
