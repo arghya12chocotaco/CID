@@ -1,0 +1,178 @@
+<html> 
+<head><title>Form validation</title> 
+
+<style>
+body {
+  background-image: url('type.jpg') ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+</style>
+<script language="javascript"> 
+var s1,s2,s3,s4,s5,s6,s7,s8; 
+function fun1() 
+{ 
+if(form1.name.value=="") 
+{ 
+alert("enter the name"); 
+form1.name.focus(); 
+} 
+else 
+{ 
+var l=form1.name.value.length; 
+s1=new String(form1.name.value); 
+for(i=0;i<l;i++) 
+{ 
+if(!((s1.charAt(i)>='a'||s1.charAt(i)>='A') && (s1.charAt(i)<='z'||s1.charAt(i)<='Z'))) 
+{ 
+alert("Please enter the correct name"); 
+form1.name.focus(); 
+break; 
+} 
+} 
+} 
+} 
+function fun2() 
+{ 
+if(form1.email.value=="") 
+{ 
+alert("enter the email"); 
+form1.email.focus(); 
+} 
+else 
+{ 
+var c1=0; 
+var c2=0; 
+var l=form1.email.value.length; 
+s2=new String(form1.email.value); 
+for(i=0;i<=l;i++) 
+{ 
+if(s2.charAt(i)=='@') 
+{ 
+c1=c1+1; 
+var j=i; 
+} 
+} 
+if(c1==1) 
+{ 
+for(i=j;i<=l;i++) 
+{ 
+if(s2.charAt(i)=='.') 
+c2=c2+1; 
+} 
+} 
+if(!((c1==1) && (c2==1))) 
+{ 
+alert("enter the correct e-mail id"); 
+form1.email.focus(); 
+} 
+} 
+} 
+function fun3() 
+{ 
+s3=form1.age.value; 
+if((s3=="")||isNaN(s3)) //isNaN() function determines whether a value is an illegal number 
+{ 
+alert("enter the age"); 
+form1.age.focus(); 
+} 
+} 
+function fun4() 
+{ 
+s4=form1.addrs.value; 
+if(s4=="") 
+{ 
+alert("enter the address"); 
+form1.addrs.focus(); 
+} 
+} 
+function fun5() 
+{ 
+s5=form1.phno.value; 
+if((s5=="") || isNaN(s5)) 
+{ 
+alert("Invalid phone number"); 
+form1.phno.focus(); 
+} 
+} 
+function fun6() 
+{ 
+var tag1=0; 
+for(var i=0;i<form1.pro.length;i++) 
+{ 
+if (form1.pro[i].checked==true) 
+{ 
+s6=form1.pro[i].value; 
+tag1=1; 
+} 
+} 
+if(!(tag1==1)) 
+{ 
+alert("select ur Programme"); 
+} 
+} 
+
+ 
+
+function fun9() 
+{ 
+w1=window.open('Order Conformation.html'); 
+w1.document.writeln("<h1><center>"); 
+w1.document.writeln("Order Conformation Details"); 
+w1.document.writeln("</h1></center>"); 
+w1.document.writeln("<br>"); 
+w1.document.writeln("Name: ",s1); 
+w1.document.writeln("<br>"); 
+w1.document.writeln("Email: ",s2); 
+w1.document.writeln("<br>"); 
+w1.document.writeln("Age: ",s3); 
+w1.document.writeln("<br>"); 
+w1.document.writeln("Address: ",s4); 
+w1.document.writeln("<br>"); 
+w1.document.writeln("Phone: ",s5); 
+w1.document.writeln("<br>"); 
+w1.document.writeln("Name of the Programme: ",s6); 
+w1.document.writeln("<br>"); 
+ 
+} 
+</script></head> 
+<body bgcolor="gray" > 
+<center style="background-color:#000000"><h1><font color="white"><b>SATHYABAMA</b> </font></H1>
+<h3 ><font color="white"><b>INSTITUTE OF SCIENCE AND TECHNOLOGY</b></font></H3>
+<H2><font color="white"><b> (REGISTRATION) </b></font></H2>
+<br>
+</CENTER>
+<font color="LightCyan">
+<CENTER>
+<h1><b><u><font color="Azure"> USER PROFILE </font></u></b></h1> 
+<form name="form1" method="get"> 
+<b> 
+Name:&nbsp;&nbsp<input type="text" name="name" maxlen="15"><br> 
+<br>
+E-mail:&nbsp<input type="text" name="email" onfocus="fun1()"><br>
+<br> 
+Age:&nbsp;&nbsp;&nbsp<input type="text" name="age" onfocus="fun2()"><br> 
+<br>
+Address:&nbsp;&nbsp;<textarea onfocus="fun3()" rows=10 cols=20 
+name=addrs></textarea><br> 
+<br>
+Phoneno:&nbsp;&nbsp;<input type="text" name="phno" onfocus="fun4() "><br> 
+<br>
+Name of the Programme:<br> 
+<input type="radio" onfocus="fun5()" name="pro" value="B.Tech">B.Tech 
+<input type="radio" onfocus="fun5()" name="pro" value="BE">BE
+ <br> 
+<input type="radio" onfocus="fun5()" name="pro"value="B.Sc">B.Sc
+<input type="radio" onfocus="fun5()" name="pro" value="B.B.A">B.B.A <br> 
+
+<br><br>
+<input type="button" value="submit" onfocus="fun6()" onclick="fun9()"> 
+<input type=”reset “ value="clear"> 
+</center>
+</font>
+</b> 
+</form> 
+</body> 
+</html>
